@@ -17,18 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
+        with: { lfs: true }     # LFS 객체를 실파일로 체크아웃
       - run: |
           git lfs install
           git lfs pull
-      - run: |
-          mkdir -p dist
-          cp -r Build index.html dist/
-          touch dist/.nojekyll
+          touch DalseoHankyeon_Test/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: DalseoHankyeon_Test
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
