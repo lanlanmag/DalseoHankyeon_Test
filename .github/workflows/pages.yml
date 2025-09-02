@@ -24,7 +24,7 @@ jobs:
           git lfs pull
       - run: |
           mkdir -p dist
-          cp -r DalseoHankyeon_Test/* dist/
+          cp -r Build index.html dist/
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
