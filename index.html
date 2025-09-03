@@ -106,7 +106,7 @@
                     lastModified: file.lastModified,
                     dataUrl: reader.result
                   };
-                  unityInstance.SendMessage('ImageDropReceiver', 'OnImageDropped', JSON.stringify(payload));
+                  unityInstance.SendMessage('PhotoUpload', 'OnImageDropped', JSON.stringify(payload));
                 };
                 reader.readAsDataURL(file);
               });
